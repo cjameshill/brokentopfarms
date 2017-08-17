@@ -1,0 +1,58 @@
+{
+  "name": "BrokenTopFarmsWeb",
+  "version": "0.0.1",
+  "description": "Serverless App for Broken Top Farms",
+  "homepage": "https://brokentop.christopherjameshill.com",
+  "author": {
+    "name": "Christopher James Hill",
+    "email": "hello@christopherjameshill.com"
+  },
+  "main": "server/index.js",
+  "keywords": [
+    "vue",
+    "express",
+    "node",
+    "serverless"
+  ],
+  "devDependencies": {
+    "del": "^3.0.0",
+    "express": "^4.15.4",
+    "gulp": "^3.9.1",
+    "gulp-ava": "^0.18.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-exclude-gitignore": "^1.1.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-nsp": "^2.4.2",
+    "serverless-plugin-warmup": "^3.0.5-rc.1"
+  },
+  "repository": "cjameshill/brokentopfarms",
+  "scripts": {
+    "start": "NODE_ENV=development node server/index.js",
+    "publish-static": "aws s3 sync public s3://browns-webapp-media",
+    "dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.98.0",
+    "aws-serverless-express": "^3.0.0",
+    "body-parser": "^1.17.2",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "express-session": "^1.15.5",
+    "express-vue": "^4.0.4",
+    "express-vue-renderer": "^0.6.3",
+    "jade": "^1.11.0",
+    "laravel-mix": "^0.10.0",
+    "mustache": "^2.3.0",
+    "pug": "^2.0.0-rc.3",
+    "request": "^2.81.0",
+    "vue": "^2.4.2",
+    "vue-server-renderer": "^2.4.2",
+    "bulma": "^0.5.1"
+  }
+}
